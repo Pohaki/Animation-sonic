@@ -1,0 +1,152 @@
+/*************************A Supprimer Début*********************/
+@keyframes play-x {
+  0%{background-position:0 0 ;}
+  100%{background-position:-585px 0 ;}
+}
+@keyframes play-y {
+  0%{background-position-y:-70px;}
+  100%{background-position-y:-350px;}
+}
+@keyframes moves{
+  0%{background-position-x: 0;}
+  100%{background-position-x: -585px;}
+}
+@keyframes jump {
+  0%{bottom:26%;}
+  60%{left:45%}
+  70%{left:57%}
+  75%{bottom:26%}
+  82%{bottom:65%}
+  93%{bottom:26%}
+  100%{bottom:26%;}
+}
+@keyframes rings-step{
+  0%{background-position: 0 0;}
+  100%{background-position: -255px 0;}
+}
+@keyframes catch-rings{
+  38%{visibility: hidden}
+  100%{visibility: hidden}
+}
+@keyframes rings{
+  0%{right:-10%;
+      bottom: 36%;}
+  100%{right:115%;
+        bottom: 36%;}
+}
+.bg-cont {
+  position: relative;
+  height: 330px;
+  overflow: hidden;
+}
+.sonic,.grass,.bush,.sky,.sea{
+    background-image: url("../../img/step3/spriteSonicfullf.png");
+}
+.sonic {
+  z-index: 1000;
+  height: 70px;
+  width: 65px;
+  position: absolute;
+  bottom: 30%;
+  left:50% ;
+  animation: play-x 0.75s steps(9) infinite, play-y 3s steps(4) infinite;
+}
+.grass{
+  z-index: 900;
+  height: 110px;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  left:0%;
+  background-position: 0 278px;
+  animation: moves infinite linear 1.3s;
+}
+.bush{
+  z-index: 850;
+  height: 160px;
+  width: 100%;
+  position: absolute;
+  bottom: 30%;
+  left:0%;
+  background-position: 0 163px;
+  animation: moves infinite linear 1.7s;
+}
+.sea{
+  z-index: 800;
+  height: 110px;
+  width: 100%;
+  position: absolute;
+  bottom:11%;
+  left:0%;
+  background-position: 0 395px;
+  animation: moves infinite linear 5s;
+
+}
+.sky{
+  z-index: 820;
+  height: 185px;
+  width: 100%;
+  position: absolute;
+  top:0%;
+  left:0%;
+  background-position: 0 571px;
+  animation: moves infinite linear 8s
+}
+.deplacement{
+  height: 70px;
+  width: 65px;
+  bottom: 26%;
+  left:45%;
+  bottom:25%;
+  animation: jump 3s linear infinite ;
+  position: absolute;
+}
+
+/****Rings****/
+.rings{
+    z-index: 980;
+    height: 24px;
+    width: 86px;
+    bottom: 50%;
+    right:10%;
+    bottom:28%;
+    animation: rings 2.6s linear infinite ;
+    position: absolute;
+}
+.rings-1{
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-right: 13px;
+  transform: scale(1.5);
+  background-image: url("../../img/step3/ringSprite.png");
+  animation: rings-step 0.7s steps(16) infinite,catch-rings 2.6s linear infinite ;
+}
+.rings-2{
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-right: 13px;
+  transform: scale(1.5);
+  background-image: url("../../img/step3/ringSprite.png");
+  animation: rings-step 0.7s 0.15s steps(16) infinite, catch-rings 2.6s 0.15s linear infinite ;
+}
+.rings-3{
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  transform: scale(1.5);
+  background-image: url("../../img/step3/ringSprite.png");
+  animation: rings-step 0.7s 0.25s steps(16) infinite, catch-rings 2.6s 0.30s linear infinite  ;
+}
+/*auteur fond et cieux*/
+.fond{
+  z-index: 700;
+  height: 140px;
+  animation: moves 0.9s steps(1)infinite;
+}
+.terre{
+  z-index: 800;
+  height:220px;
+}
+/*************************A Supprimer Fin*********************/
